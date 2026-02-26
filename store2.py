@@ -7,5 +7,15 @@ stock=[
 ]
 for index, item in enumerate(stock):
     print(index, ":", item["name"])
+cart=[]
 item=int(input("Please enter the index number of the item of want to purchase: "))
-print(stock[item]["name"])
+cart.append(stock[item])
+cashier=input("Are you done shopping yet? yes/no ")
+register=cashier.lower()
+while register()=="no":
+    item=int(input("Please enter the index number of the item of want to purchase: "))
+if register()=="yes":
+    for index, item in enumerate(cart):
+        print(index, ":", item["name"])
+else:
+    cashier=input("Are you done shopping yet? yes/no")
