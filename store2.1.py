@@ -8,11 +8,10 @@ stock=[
 for index, item in enumerate(stock):
     print(index, ":", item["name"]) #prints list of items & their index inside stock
 cart=[]  #list of items you buy
-def 
-    item=int(input("Please enter the index number of the item of want to purchase: "))  #asks the items from stock you want
-    cart.append(stock[item])    #adds the item you input into cart
-    cashier=input("Are you done shopping yet? yes/no ")  #asks if you are done shopping
-    register=cashier.lower()    #makes the answer for cashier lowercase
+item=int(input("Please enter the index number of the item of want to purchase: "))  #asks the items from stock you want
+cart.append(stock[item])    #adds the item you input into cart
+cashier=input("Are you done shopping yet? yes/no ")  #asks if you are done shopping
+register=cashier.lower()    #makes the answer for cashier lowercase
 while register()=="no":
     item=int(input("Please enter the index number of the item of want to purchase: "))  #as long as regiser says no, you will be asked to input another item from stock
 if register()=="yes":
