@@ -9,12 +9,14 @@ cart=[]
 def store(cart):
     item=int(input("Please enter the index number of the item of want to purchase: "))
     cart.append(stock[item])
-def register():
+store(cart)
+
+cashier=input("Are you done shopping yet? yes/no ")
+cashier=cashier.lower
+while cashier=="no":
+    store(cart)
     cashier=input("Are you done shopping yet? yes/no ")
     cashier=cashier.lower
-    return cashier
-while cashier=="no":
-    item=int(input("Please enter the index number of the item of want to purchase: "))
-if register()=="yes":
-    for index, item in enumerate(cart):
-        print(index, ":", item["name"])
+    if cashier=="yes":
+        for index, item in enumerate(cart):
+            print(index, ":", item["name"])
