@@ -11,6 +11,6 @@ cashier=input("Are you done shopping yet? yes/no ").lower()  #asks if you are do
 while cashier!="yes":
     store(cart)
     cashier=input("Are you done shopping yet? yes/no ").lower()  #asks if you are done shopping
-if register()=="yes":
+if cashier=="yes":
     for index, item in enumerate(cart):
         print(index, ":", item["name"])
