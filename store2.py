@@ -5,7 +5,7 @@ for index, item in enumerate(stock):
     print(index, ":", item["name"]) #prints list of items & their index inside stock
 cart=[]  #list of items you buy
 def store(cart):
-    item=int(input("Please enter the index number of the item of want to purchase: "))  #asks the items from stock you want
+    item=int(input("Please enter the index number of the item you want to purchase: "))  #asks the items from stock you want
     cart.append(stock[item])    #adds the item you input into cart
 cashier=input("Are you done shopping yet? yes/no ").lower()  #asks if you are done shopping
 while cashier!="yes":
