@@ -13,16 +13,13 @@ while cashier!="yes":
     cashier=input("Are you done shopping yet? yes/no ").lower()  #asks if you are done shopping
 if cashier=="yes":
     def receipt(orders):
-        the_receipt={}
+        the_receipt={}  
         for item in orders:
-            if item["name"] in the_receipt:
+            if item["name"] in the_receipt: #if the item is already in the_receipt, the quantity of that item will go up by 1
                 the_receipt[item['name']]['qty']+=1
-            else:  
-                the_receipt[item['name']]={
-                    'price':item['price'],
-                    'qty':1
-                }
+            else:  #if the item isn't already in the_receipt, a dictionary inside the_receipt will be made under that item, its price, and set to a quantity of 1
+                the_receipt[item['name']]={'price':item['price'],'qty':1}
         for item, value in the_receipt.items():
-            price=value['price']*value['qty']
-            print(item, price, value['qty'])
+            price=value['price']*value['qty']   #the price of each item will be the price per item times the quantity
+            print(item, price, value['qty'])    #it will print the name, total price of the specific items, the value that is the amount per item
     receipt(cart)
