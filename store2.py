@@ -12,5 +12,17 @@ while cashier!="yes":
     store(cart)
     cashier=input("Are you done shopping yet? yes/no ").lower()  #asks if you are done shopping
 if cashier=="yes":
-    for index, item in enumerate(cart):
-        print(index, ":", item["name"])
+    def receipt(orders):
+        the_receipt={}
+        for item in orders:
+            if item["name"] in the_receipt:
+                the_receipt[item['name']]['qty']+=1
+            else:  
+                the_receipt[item['name']]={
+                    'price':item['price'],
+                    'qty':1
+                }
+        for item, value in the_receipt.items():
+            price=value['price']*value['qty']
+            print(item, price, value['qty'])
+    receipt(cart)
